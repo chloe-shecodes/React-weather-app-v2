@@ -1,8 +1,12 @@
 .weather {
-  width: 580px;
+  width: 680px;
   color: #fdf0ec;
-  border: 7px solid #b56e74;
-  outline: 1px solid #fdf0ec;
+  margin: 20px auto;
+  text-align: center;
+  border: 3px solid #b56e74;
+  border-radius: 2%;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .weather .search-current-location {
@@ -259,4 +263,14 @@
 .weather .forecast-day5 img {
   width: 60px;
   height: 60px;
+}
+
+.github-text {
+  font-size: 10px;
+  color: #b56e74;
+  text-shadow: 0.5px 0.5px 0.75px #6a333d;
+}
+.github-link {
+  color: #b56e74;
+  text-decoration: underline;
 }
