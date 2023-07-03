@@ -1,0 +1,65 @@
+<div className="forecast">
+        <div className="card" style={{ width: "18rem" }}>
+          <div className="card-body forecast-day1">
+            <h5 className="forecast-day">Mon</h5>
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
+              alt=""
+            />
+            <div>
+              <span>15°</span> |<span className="forecast-temp-min">7°</span>
+            </div>
+          </div>
+        </div>
+        <div className="card" style={{ width: "18rem" }}>
+          <div className="card-body forecast-day2">
+            <h5 className="forecast-day">Tue</h5>
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+              alt=""
+            />
+            <div>
+              <span>25°</span> |<span className="forecast-temp-min">22°</span>
+            </div>
+          </div>
+        </div>
+        <div className="card" style={{ width: "18rem" }}>
+          <div className="card-body forecast-day3">
+            <h5 className="forecast-day">Wed</h5>
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+              alt=""
+            />
+            <div>
+              <span>17°</span> |<span className="forecast-temp-min">10°</span>
+            </div>
+          </div>
+        </div>
+        <div className="card" style={{ width: "18rem" }}>
+          <div className="card-body forecast-day4">
+            <h5 className="forecast-day">Thu</h5>
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png"
+              alt=""
+            />
+            <div>
+              <span>9°</span> |<span className="forecast-temp-min">8°</span>
+            </div>
+          </div>
+        </div>
+        <div className="card" style={{ width: "18rem" }}>
+          <div className="card-body forecast-day5">
+            <h5 className="forecast-day">Fri</h5>
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/snow-day.png"
+              alt=""
+            />
+            <div>
+              <span>20°</span> |<span className="forecast-temp-min">-5°</span>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <br />
+        </div>
+      </div>)

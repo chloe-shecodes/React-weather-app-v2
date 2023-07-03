@@ -264,13 +264,3 @@
   width: 60px;
   height: 60px;
 }
-
-.github-text {
-  font-size: 10px;
-  color: #b56e74;
-  text-shadow: 0.5px 0.5px 0.75px #6a333d;
-}
-.github-link {
-  color: #b56e74;
-  text-decoration: underline;
-}

@@ -4,4 +4,15 @@ a {
 body {
   font-family: "Quicksand", sans-serif;
   background-color: #f0cac4;
+  text-align: center;
+}
+
+.github-text {
+  font-size: 10px;
+  color: #b56e74;
+  text-shadow: 0.5px 0.5px 0.75px #6a333d;
+}
+.github-link {
+  color: #b56e74;
+  text-decoration: underline;
 }
