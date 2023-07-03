@@ -10,19 +10,20 @@ import myLocationIcon from "./icons/my-location.png";
 
 export default function Weather() {
   const [ready, setReady] = useState(false);
-  const [temperature, setTemperature] = useState("");
-  let weatherData = {
-    city: "Sydney",
-    time: "19:25",
-    currentIcon:
-      "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png",
-    wind: 15,
-    humidity: 24,
-    description: "sunny, with wind",
-    feelingTemp: 20,
-  };
+  const [weatherData, setWeatherData] = useState({});
+  let time = "19:25";
+
   function handleResponse(response) {
-    setTemperature(response.data.main.temp);
+    setWeatherData({
+      city: response.data.name,
+      temperature: response.data.main.temp,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+      description: response.data.weather[0].description,
+      feelingTemp: response.data.main.feels_like,
+      currentIcon:
+        "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png",
+    });
     setReady(true);
   }
 
@@ -65,12 +66,12 @@ export default function Weather() {
         <div className="current-wrapper container text-center">
           <div className="row align-items-center">
             <div className="col-12 current-city">{weatherData.city}</div>
-            <div className="col-12 current-time">{weatherData.time}</div>
+            <div className="col-12 current-time">{time}</div>
             <div className="row">
               <div className="col current-degrees">
                 <div>
                   <div className="col current-temp">
-                    {Math.round(temperature)}
+                    {Math.round(weatherData.temperature)}
                   </div>
                 </div>
                 <div className="col metrics">
@@ -92,17 +93,15 @@ export default function Weather() {
                 <ul>
                   <li>
                     <img src={anemometer} alt="anenometer" />
-                    <span>{weatherData.wind} km|h</span>
+                    <span>{Math.round(weatherData.wind)} km|h</span>
                   </li>
                   <li>
                     <img src={humidity} alt="humidity" className="humidity" />
-                    <span> {weatherData.humidity}%</span>
+                    <span> {Math.round(weatherData.humidity)}%</span>
                   </li>
 
-                  <li className="weather-description">
-                    {weatherData.description}
-                  </li>
-                  <li>feels like {weatherData.feelingTemp}°</li>
+                  <li>{weatherData.description}</li>
+                  <li>feels like {Math.round(weatherData.feelingTemp)}°</li>
                 </ul>
               </div>
             </div>
@@ -117,8 +116,9 @@ export default function Weather() {
       </div>
     );
   } else {
+    let city = "Las Vegas";
     const apiKey = `bd3bb6534458ba51b48c49f5155745b6`;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${weatherData.city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 
     return "Loading...";
