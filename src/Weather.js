@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 
 import "./Weather.css";
@@ -11,10 +12,10 @@ import myLocationIcon from "./icons/my-location.png";
 export default function Weather() {
   const [ready, setReady] = useState(false);
   const [weatherData, setWeatherData] = useState({});
-  let time = "19:25";
 
   function handleResponse(response) {
     setWeatherData({
+      date: new Date(response.data.dt * 1000),
       city: response.data.name,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
@@ -66,7 +67,9 @@ export default function Weather() {
         <div className="current-wrapper container text-center">
           <div className="row align-items-center">
             <div className="col-12 current-city">{weatherData.city}</div>
-            <div className="col-12 current-time">{time}</div>
+            <div className="col-12 current-time">
+              <FormattedDate date={weatherData.date} />
+            </div>
             <div className="row">
               <div className="col current-degrees">
                 <div>
