@@ -1,20 +1,20 @@
 import React, { useState } from "react";
-import FormattedDate from "./FormattedDate";
+
+import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 
 import "./Weather.css";
 import background from "./media/clouds-pink.jpg";
 
-import anemometer from "./icons/anemometer.png";
-import humidity from "./icons/humidity2.png";
 import myLocationIcon from "./icons/my-location.png";
 
-export default function Weather() {
-  const [ready, setReady] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
     setWeatherData({
+      ready: true,
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
       temperature: response.data.main.temp,
@@ -25,10 +25,24 @@ export default function Weather() {
       currentIcon:
         "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png",
     });
-    setReady(true);
   }
 
-  if (ready) {
+  function handleSubmit(event) {
+    event.prevenDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
+  function search() {
+    const apiKey = `bd3bb6534458ba51b48c49f5155745b6`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  if (weatherData.ready) {
     return (
       <div
         className="weather"
@@ -37,7 +51,7 @@ export default function Weather() {
         <div className="row">
           <br />
         </div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-1 col-search-current-location">
               <a href="/">
@@ -53,77 +67,25 @@ export default function Weather() {
                 type="search"
                 placeholder="  Enter a city..."
                 className="city-input"
+                onChange={handleCityChange}
               />
             </div>
             <div className="col-2 col-search-input-button">
-              <button type="submit" className="search-input-button">
-                search
-              </button>
+              <input
+                type="submit"
+                value="Search"
+                className="search-input-button"
+              />
             </div>
           </div>
         </form>
 
         <br />
-        <div className="current-wrapper container text-center">
-          <div className="row align-items-center">
-            <div className="col-12 current-city">{weatherData.city}</div>
-            <div className="col-12 current-time">
-              <FormattedDate date={weatherData.date} />
-            </div>
-            <div className="row">
-              <div className="col current-degrees">
-                <div>
-                  <div className="col current-temp">
-                    {Math.round(weatherData.temperature)}
-                  </div>
-                </div>
-                <div className="col metrics">
-                  <ul>
-                    <li className="degrees-symbol">°</li>
-                    <li className="units">
-                      <a href="/" className="active">
-                        C
-                      </a>{" "}
-                      | <a href="/">F</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col current-icon">
-                <img src={weatherData.currentIcon} alt="" />
-              </div>
-              <div className="col weather-elements">
-                <ul>
-                  <li>
-                    <img src={anemometer} alt="anenometer" />
-                    <span>{Math.round(weatherData.wind)} km|h</span>
-                  </li>
-                  <li>
-                    <img src={humidity} alt="humidity" className="humidity" />
-                    <span> {Math.round(weatherData.humidity)}%</span>
-                  </li>
-
-                  <li>{weatherData.description}</li>
-                  <li>feels like {Math.round(weatherData.feelingTemp)}°</li>
-                </ul>
-              </div>
-            </div>
-            <div className="row">
-              <br />
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <br />
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
-    let city = "Las Vegas";
-    const apiKey = `bd3bb6534458ba51b48c49f5155745b6`;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
-
+    search();
     return "Loading...";
   }
 }

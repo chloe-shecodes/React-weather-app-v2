@@ -9,7 +9,7 @@ let gitHubUrl = "https://github.com/chloe-shecodes";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <div className="index">
-    <Weather />
+    <Weather defaultCity="Sydney" />
 
     <div className="row">
       <br />
