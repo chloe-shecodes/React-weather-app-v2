@@ -15,15 +15,14 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
-      date: new Date(response.data.dt * 1000),
-      city: response.data.name,
-      temperature: response.data.main.temp,
+      date: new Date(response.data.time * 1000),
+      city: response.data.city,
+      temperature: response.data.temperature.current,
       wind: response.data.wind.speed,
-      humidity: response.data.main.humidity,
-      description: response.data.weather[0].description,
-      feelingTemp: response.data.main.feels_like,
-      currentIcon:
-        "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png",
+      humidity: response.data.temperature.humidity,
+      description: response.data.condition.description,
+      feelingTemp: response.data.temperature.feels_like,
+      currentIcon: response.data.condition.icon_url,
     });
   }
 
@@ -37,8 +36,8 @@ export default function Weather(props) {
   }
 
   function search() {
-    const apiKey = `bd3bb6534458ba51b48c49f5155745b6`;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const apiKey = `cd2bcfo5ae203b19202a5050tb1b3849`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
 
