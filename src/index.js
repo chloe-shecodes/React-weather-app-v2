@@ -16,7 +16,7 @@ root.render(
       <br />
     </div>
     <footer className="github-text">
-      <a href={gitHubUrl} className="github-link" target="_blank">
+      <a href={gitHubUrl} className="github-link">
         Open-source code
       </a>
       , by Chloé Smits
