@@ -5,7 +5,7 @@ import "./Index.css";
 import Weather from "./Weather";
 import reportWebVitals from "./reportWebVitals";
 
-let gitHubUrl = "https://github.com/chloe-shecodes";
+let gitHubUrl = "https://github.com/chloe-shecodes/React-weather-app-v2";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -16,7 +16,7 @@ root.render(
       <br />
     </div>
     <footer className="github-text">
-      <a href={gitHubUrl} className="github-link">
+      <a href={gitHubUrl} className="github-link" target="_blank">
         Open-source code
       </a>
       , by Chloé Smits

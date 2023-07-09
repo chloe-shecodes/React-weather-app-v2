@@ -1,25 +1,16 @@
 .weather {
   width: 680px;
   color: #fdf0ec;
+
   margin: 20px auto;
   text-align: center;
   border: 3px solid #b56e74;
   border-radius: 2%;
   padding-left: 50px;
   padding-right: 50px;
+  opacity: 0.5;
 }
 
-.weather .search-current-location {
-  padding-right: 3px;
-  margin: 0 0 0px 12px;
-  width: 30px;
-  filter: invert(88%) sepia(2%) saturate(3945%) hue-rotate(306deg)
-    brightness(86%) contrast(104%);
-}
-.weather .search-current-location:hover {
-  filter: invert(96%) sepia(4%) saturate(613%) hue-rotate(319deg)
-    brightness(93%) contrast(114%);
-}
 .weather .city-input {
   width: 100%;
   border: 2px solid #b56e74;
@@ -68,7 +59,7 @@
 .weather .current-wrapper {
   border: 2px solid #fdf0ec;
   border-radius: 145px;
-  background-color: #b56e74;
+  background-color: rgb(181, 110, 116, 0.7);
 }
 
 .weather .current-degrees {

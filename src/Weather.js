@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 
 import WeatherInfo from "./WeatherInfo";
+
 import axios from "axios";
 
 import "./Weather.css";
 import background from "./media/clouds-pink.jpg";
-
-import myLocationIcon from "./icons/my-location.png";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -52,16 +51,7 @@ export default function Weather(props) {
         </div>
         <form onSubmit={handleSubmit}>
           <div className="row">
-            <div className="col-1 col-search-current-location">
-              <a href="/">
-                <img
-                  src={myLocationIcon}
-                  alt="find my location"
-                  className="search-current-location"
-                />
-              </a>
-            </div>
-            <div className="mb-3 col-9">
+            <div className="mb-3 col-10">
               <input
                 type="search"
                 placeholder="  Enter a city..."
