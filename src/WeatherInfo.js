@@ -1,5 +1,5 @@
 import React from "react";
-import FormattedDate from "./formattedDate";
+import FormattedDate from "./FormattedDate";
 import anemometer from "./icons/anemometer.png";
 import humidity from "./icons/humidity2.png";
 
