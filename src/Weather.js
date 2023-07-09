@@ -5,11 +5,18 @@ import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 
 import "./Weather.css";
-import background from "./media/clouds-pink.jpg";
+import background from "./media/clouds-opacity.png";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+
+  const styles = {
+    background: {
+      backgroundImage: `url(${background})`,
+      backgroundSize: "cover",
+    },
+  };
 
   function handleResponse(response) {
     setWeatherData({
@@ -42,10 +49,7 @@ export default function Weather(props) {
 
   if (weatherData.ready) {
     return (
-      <div
-        className="weather"
-        style={{ backgroundImage: `url(${background})` }}
-      >
+      <div className="weather" style={styles.background}>
         <div className="row">
           <br />
         </div>

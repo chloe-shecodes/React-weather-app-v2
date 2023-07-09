@@ -8,7 +8,6 @@
   border-radius: 2%;
   padding-left: 50px;
   padding-right: 50px;
-  opacity: 0.5;
 }
 
 .weather .city-input {
@@ -59,7 +58,7 @@
 .weather .current-wrapper {
   border: 2px solid #fdf0ec;
   border-radius: 145px;
-  background-color: rgb(181, 110, 116, 0.7);
+  background-color: rgb(181, 110, 116, 0.85);
 }
 
 .weather .current-degrees {
