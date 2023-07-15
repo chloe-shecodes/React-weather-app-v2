@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 import axios from "axios";
 
 import "./Weather.css";
-import background from "./media/clouds-opacity.png";
+import background from "./media/clouds.png";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -75,6 +76,7 @@ export default function Weather(props) {
 
         <br />
         <WeatherInfo data={weatherData} />
+        <WeatherForecast data={weatherData} />
       </div>
     );
   } else {
