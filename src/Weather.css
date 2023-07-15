@@ -118,8 +118,8 @@
   margin-left: -25px;
 }
 .weather .weather-elements img {
-  filter: invert(88%) sepia(2%) saturate(3945%) hue-rotate(306deg)
-    brightness(86%) contrast(104%);
+  filter: invert(89%) sepia(9%) saturate(465%) hue-rotate(304deg)
+    brightness(95%) contrast(87%);
   width: 13px;
 }
 .weather .weather-elements span {
