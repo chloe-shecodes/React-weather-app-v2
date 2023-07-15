@@ -1,7 +1,12 @@
+.WeatherForecast {
+  display: flex;
+  justify-content: center;
+}
+
 .WeatherForecast .col {
   border-radius: 30%;
   flex: 0;
-  margin-bottom: 20px;
+  margin: 20px 10px;
 
   background-color: rgb(181, 110, 116, 0.55);
 }
@@ -19,10 +24,7 @@
   margin-bottom: 10px;
   font-size: 14px;
 }
-.WeatherForecast-temp-max {
-  font-weight: 500;
-}
 
 .WeatherForecast-temp-min {
-  opacity: 0.8;
+  color: #e3c8cb;
 }
