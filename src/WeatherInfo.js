@@ -3,11 +3,12 @@ import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
 import anemometer from "./icons/anemometer.png";
 import humidity from "./icons/humidity2.png";
+import "./WeatherInfo.css";
 
 export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
-      <div className="current-wrapper container text-center">
+      <div className="current-wrapper container">
         <div className="row align-items-center">
           <div className="col-12 current-city">{props.data.city}</div>
           <div className="col-12 current-time">

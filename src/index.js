@@ -12,11 +12,14 @@ root.render(
   <div className="index">
     <Weather defaultCity="Sydney" />
 
-    <div className="row">
-      <br />
-    </div>
+    <div className="row"></div>
     <footer className="github-text">
-      <a href={gitHubUrl} className="github-link">
+      <a
+        href={gitHubUrl}
+        className="github-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Open-source code
       </a>
       , by Chloé Smits
