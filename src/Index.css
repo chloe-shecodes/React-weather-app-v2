@@ -1,18 +1,25 @@
+:root {
+  --first-color: rgb(181, 110, 116, 0.7);
+  --second-color: #fdf0ec;
+  --third-color: #e3c8cb;
+  --fourth-color: #e1c5c7;
+}
+
 a {
   text-decoration: none;
 }
 body {
   font-family: "Quicksand", sans-serif;
-  background: #e1c5c7;
+  background: var(--fourth-color);
   text-align: center;
+  color: var(--second-color);
 }
 
 .github-text {
   font-size: 10px;
-  color: #b56e74;
-  text-shadow: 0.5px 0.5px 0.75px #6a333d;
+  color: var(--first-color);
 }
 .github-link {
-  color: #b56e74;
+  color: var(--first-color);
   text-decoration: underline;
 }

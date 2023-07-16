@@ -1,9 +1,8 @@
 .weather {
   width: 680px;
-  color: #fdf0ec;
   margin: 20px auto;
   text-align: center;
-  border: 3px solid #b56e74;
+  border: 3px solid var(--first-color);
   border-radius: 2%;
   padding-left: 50px;
   padding-right: 50px;
@@ -11,18 +10,18 @@
 
 .weather .city-input {
   width: 100%;
-  border: 0px solid #b56e74;
+  border: none;
   border-radius: 91px;
-  background-color: #f6edee;
-  color: #b56e74;
+  background-color: var(--second-color);
+  color: var(--first-color);
   padding: 0 15px;
 }
 
 .weather input:focus {
-  outline: 2px solid #f6edee;
+  outline: 2px solid var(--fourth-color);
 }
 .weather input::placeholder {
-  color: #b56e74;
+  color: var(--first-color);
   font-weight: 400;
 }
 .weather .col-search-input-button {
@@ -30,12 +29,12 @@
 }
 .weather .search-input-button {
   width: 100%;
-  border: 0px solid #fdf0ec;
+  border: none;
   border-radius: 91px;
-  background-color: rgb(181, 110, 116, 0.6);
-  color: #fdf0ec;
+  background-color: var(--first-color);
+  color: var(--second-color);
 }
 .weather .search-input-button:hover {
-  background-color: #fdf0ec;
-  color: #b56e74;
+  background-color: var(--second-color);
+  color: var(--first-color);
 }

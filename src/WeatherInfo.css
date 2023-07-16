@@ -1,6 +1,6 @@
 .WeatherInfo .current-wrapper {
   border-radius: 65px;
-  background-color: rgb(181, 110, 116, 0.75);
+  background-color: var(--first-color);
 }
 
 .WeatherInfo .current-city {
@@ -14,7 +14,7 @@
 .WeatherInfo .current-time {
   font-size: 15px;
   margin-bottom: 5px;
-  color: #e3c8cb;
+  color: var(--third-color);
 }
 
 .WeatherInfo .current-temp {
@@ -37,7 +37,7 @@
   font-size: 13px;
   list-style: none;
   text-align: left;
-  color: #e3c8cb;
+  color: var(--third-color);
   margin-left: -25px;
 }
 .WeatherInfo .weather-elements img {

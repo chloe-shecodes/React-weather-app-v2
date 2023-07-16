@@ -7,8 +7,7 @@
   border-radius: 30%;
   flex: 0;
   margin: 20px 10px;
-
-  background-color: rgb(181, 110, 116, 0.55);
+  background-color: var(--first-color);
 }
 
 .WeatherForecast-day {
@@ -26,5 +25,5 @@
 }
 
 .WeatherForecast-temp-min {
-  color: #e3c8cb;
+  color: var(--third-color);
 }
