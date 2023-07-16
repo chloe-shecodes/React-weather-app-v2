@@ -1,6 +1,5 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
-import WeatherTemperature from "./WeatherTemperature";
 import anemometer from "./icons/anemometer.png";
 import humidity from "./icons/humidity2.png";
 import "./WeatherInfo.css";
@@ -9,16 +8,18 @@ export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
       <div className="current-wrapper container">
-        <div className="row align-items-center">
+        <div className="row">
           <div className="col-12 current-city">{props.data.city}</div>
           <div className="col-12 current-time">
             <FormattedDate date={props.data.date} />
           </div>
           <div className="row">
-            <WeatherTemperature celcius={props.data.temperature} />
+            <div className="col current-temp">
+              {Math.round(props.data.temperature)}°
+            </div>
 
             <div className="col current-icon">
-              <img src={props.data.currentIcon} alt="" />
+              <img src={props.data.currentIcon} alt="weather icon" />
             </div>
             <div className="col weather-elements">
               <ul>
