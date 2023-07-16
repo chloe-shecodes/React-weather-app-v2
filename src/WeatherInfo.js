@@ -24,15 +24,11 @@ export default function WeatherInfo(props) {
             <div className="col-4 weather-elements">
               <ul>
                 <li>
-                  <img
-                    src={anemometer}
-                    alt="anenometer"
-                    className="anenometer"
-                  />
+                  <img src={anemometer} alt="anenometer" />
                   <span>{Math.round(props.data.wind)} km|h</span>
                 </li>
                 <li>
-                  <img src={humidity} alt="humidity" className="humidity" />
+                  <img src={humidity} alt="humidity" />
                   <span> {Math.round(props.data.humidity)}%</span>
                 </li>
 
