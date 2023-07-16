@@ -50,7 +50,7 @@ export default function Weather(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="weather" style={styles.background}>
+      <div className="Weather" style={styles.background}>
         <div className="row">
           <br />
         </div>

@@ -1,6 +1,6 @@
-.weather {
-  width: 680px;
-  margin: 20px auto;
+.Weather {
+  width: 690px;
+  margin: 80px auto;
   text-align: center;
   border: 3px solid var(--first-color);
   border-radius: 2%;
@@ -8,7 +8,7 @@
   padding-right: 50px;
 }
 
-.weather .city-input {
+.Weather .city-input {
   width: 100%;
   border: none;
   border-radius: 91px;
@@ -17,24 +17,24 @@
   padding: 0 15px;
 }
 
-.weather input:focus {
+.Weather input:focus {
   outline: 2px solid var(--fourth-color);
 }
-.weather input::placeholder {
+.Weather input::placeholder {
   color: var(--first-color);
   font-weight: 400;
 }
-.weather .col-search-input-button {
+.Weather .col-search-input-button {
   padding: 0 15px 0 0;
 }
-.weather .search-input-button {
+.Weather .search-input-button {
   width: 100%;
   border: none;
   border-radius: 91px;
   background-color: var(--first-color);
   color: var(--second-color);
 }
-.weather .search-input-button:hover {
+.Weather .search-input-button:hover {
   background-color: var(--second-color);
   color: var(--first-color);
 }

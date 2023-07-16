@@ -17,19 +17,18 @@
   color: var(--third-color);
 }
 
-.WeatherInfo .current-temp {
-  font-size: 70px;
-  line-height: 1;
-  padding-top: 12px;
-  margin-left: 40px;
-  margin-right: -40px;
+.WeatherInfo .current-weather {
+  display: flex;
+  justify-content: center;
+  margin: 0;
 }
 
-.WeatherInfo .weather-elements {
-  padding-top: 9px;
+.WeatherInfo .current-temp {
+  font-size: 70px;
 }
+
 .WeatherInfo .weather-elements ul {
-  padding-left: 40px;
+  margin: 12px 0;
 }
 .WeatherInfo .weather-elements li {
   display: flex;
@@ -38,7 +37,6 @@
   list-style: none;
   text-align: left;
   color: var(--third-color);
-  margin-left: -25px;
 }
 .WeatherInfo .weather-elements img {
   filter: invert(89%) sepia(9%) saturate(465%) hue-rotate(304deg)

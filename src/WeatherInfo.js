@@ -13,15 +13,15 @@ export default function WeatherInfo(props) {
           <div className="col-12 current-time">
             <FormattedDate date={props.data.date} />
           </div>
-          <div className="row">
-            <div className="col current-temp">
+          <div className="row current-weather">
+            <div className="col-4 current-temp">
               {Math.round(props.data.temperature)}°
             </div>
 
-            <div className="col current-icon">
+            <div className="col-3 current-icon">
               <img src={props.data.currentIcon} alt="weather icon" />
             </div>
-            <div className="col weather-elements">
+            <div className="col-4 weather-elements">
               <ul>
                 <li>
                   <img src={anemometer} alt="anenometer" />
